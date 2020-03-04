@@ -1,5 +1,5 @@
-# readme generator
-![Followers](https://img.shields.io/github/followers/DVasquez4155?style=social) ![License](https://img.shields.io/github/license/DVasquez4155/readme-generator) ![Language](https://img.shields.io/github/languages/top/DVasquez4155/readme-generator) ![Latest Commit](https://img.shields.io/github/last-commit/DVasquez4155/readme-generator)
+# ReadMe Generator
+![Followers](https://img.shields.io/github/followers/DVasquez4155?style=social) ![License](https://img.shields.io/github/license/DVasquez4155/ReadMe-Generator) ![Language](https://img.shields.io/github/languages/top/DVasquez4155/ReadMe-Generator) ![Latest Commit](https://img.shields.io/github/last-commit/DVasquez4155/ReadMe-Generator)
 ## Description
 AS A developer
 
