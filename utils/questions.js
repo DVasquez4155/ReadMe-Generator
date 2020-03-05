@@ -40,7 +40,7 @@ exports.title = {
 };
 exports.desc = {
     message: "What will your project description be?",
-    type: "editor",
+    type: "input",
     name: "desc",
     default: "Project Description"
 };
