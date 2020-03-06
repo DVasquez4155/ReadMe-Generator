@@ -152,3 +152,18 @@ exports.image = {
         },
     ],
 };
+exports.pages = {
+    message: "Is this published in Github Pages?",
+    type: "list",
+    name: "pages",
+    choices: [
+        {
+            name: 'Yes',
+            value: '[${image}](https://${githubUsername}.github.io/${title})',
+        },
+        {
+            name: 'No',
+            value: '[${image}](#)',
+        }
+    ],
+};

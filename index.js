@@ -9,6 +9,7 @@ const questions = [
     q.badges,
     q.desc,
     q.image,
+    q.pages,
     q.table,
     q.license,
     q.install,
@@ -20,6 +21,10 @@ const questions = [
 ];
 async function init() {
     const data = await inquirer.prompt(questions);
+    data.pages = data.pages
+    .replace('${image}',`![Image that shows the project](${data.image})`)
+    .replace('${githubUsername}', data.githubUsername)
+    .replace('${title}',data.title.replace(' ', '-'));
     data.contributers = [data.githubUsername]
     const githubQuestions = []
     for (var i = 0; i < data.numOfCont; i++) {

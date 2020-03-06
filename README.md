@@ -1,7 +1,8 @@
 # ReadMe Generator 
 ![Followers](https://img.shields.io/github/followers/DVasquez4155?style=social) ![License](https://img.shields.io/github/license/DVasquez4155/ReadMe-Generator) ![Language](https://img.shields.io/github/languages/top/DVasquez4155/ReadMe-Generator) ![Latest Commit](https://img.shields.io/github/last-commit/DVasquez4155/ReadMe-Generator)
 ## Description
-![Image that shows the project](./assets/img/icon.gif)
+[![Image that shows the project](./assets/img/icon.gif)](https://DVasquez4155.github.io/Project-Title)
+
 AS A developer
 
 I WANT a README generator

@@ -56,7 +56,8 @@ const contributers = [];
 return `# ${data.title} ${data.projectVersion}
 ${data.badges.join(' ')}
 ## Description
-![Image that shows the project](${data.image})
+${data.pages}
+
 ${data.desc}
 ${table}${install}${usage}${test}
 ## Credits
