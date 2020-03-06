@@ -24,7 +24,7 @@ async function init() {
     data.pages = data.pages
     .replace('${image}',`![Image that shows the project](${data.image})`)
     .replace('${githubUsername}', data.githubUsername)
-    .replace('${title}',data.title.replace(' ', '-'));
+    .replace('${title}',data.title.replace(new RegExp(' ', 'g'),'-'));
     data.contributers = [data.githubUsername]
     const githubQuestions = []
     for (var i = 0; i < data.numOfCont; i++) {

@@ -50,7 +50,7 @@ const contributers = [];
         vals.push(
             e
             .replace("${githubUsername}", data.contributers[0])
-            .replace("${title}", data.title.replace(' ', '-'))
+            .replace("${title}", data.title.replace(new RegExp(' ', 'g'),'-'))
         )
     })
     data.badges = vals;
