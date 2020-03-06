@@ -1,12 +1,12 @@
-# ReadMe Generator
+# ReadMe Generator 
 ![Followers](https://img.shields.io/github/followers/DVasquez4155?style=social) ![License](https://img.shields.io/github/license/DVasquez4155/ReadMe-Generator) ![Language](https://img.shields.io/github/languages/top/DVasquez4155/ReadMe-Generator) ![Latest Commit](https://img.shields.io/github/last-commit/DVasquez4155/ReadMe-Generator)
 ## Description
+![Image that shows the project](./assets/img/icon.gif)
 AS A developer
 
 I WANT a README generator
 
 SO THAT I can easily put together a good README for a new project
-
 ## Table of Contents
 * [Installation](#Installation)
 * [Usage](#Usage)
@@ -14,7 +14,7 @@ SO THAT I can easily put together a good README for a new project
 * [Contributing](#Contributing)
 * [License](#License)
 ## Installation
-```npm install```
+```npm i```
 ## Usage
 ```node index.js```
 ## Credits

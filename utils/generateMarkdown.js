@@ -1,5 +1,4 @@
 const api = require('./api');
-const README_PATH = `${process.cwd()}\\README.md`;
 async function generateMarkdown(data) {
   let table = ``;
   if (data.table == "Yes") {
@@ -33,7 +32,7 @@ table += `
 * [Credits](#Credits)
 * [Contributing](#Contributing)
 * [License](#License)`
-  const contributers = [];
+const contributers = [];
   await Promise.all(api.getUsers(data.contributers)).then(function(results) {
     results.forEach(function(user){
       let contributerName = user.data.login
@@ -42,6 +41,7 @@ table += `
       }
       contributers.push(`[<img src="${user.data.avatar_url}" width="50"/> ${contributerName}](${user.data.html_url})`)
     })
+  })
     
     const vals = [];
     data.badges.forEach(function (e) {
@@ -52,9 +52,11 @@ table += `
         )
     })
     data.badges = vals;
-    const markdown = `# ${data.title} ${data.projectVersion}
+
+return `# ${data.title} ${data.projectVersion}
 ${data.badges.join(' ')}
 ## Description
+![Image that shows the project](${data.image})
 ${data.desc}
 ${table}${install}${usage}${test}
 ## Credits
@@ -62,10 +64,5 @@ ${contributers.join(' ')}
 ${data.contribute}
 ## License
 Licensed under the ${data.license} license.`;
-  api.writeToFile(README_PATH, markdown)
-  }, function(err) {
-  
-  });
 }
-
 module.exports = generateMarkdown;

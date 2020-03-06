@@ -1,12 +1,14 @@
 const inquirer = require('inquirer');
+const README_PATH = `${process.cwd()}\\README.md`;
 const q = require('./utils/questions');
-// const writeFileAsync = util.promisify(fs.writeFile);
 const generateMarkdown = require('./utils/generateMarkdown')
+var fs = require('fs');
 const questions = [
     q.title,
     q.projectVersion,
     q.badges,
     q.desc,
+    q.image,
     q.table,
     q.license,
     q.install,
@@ -28,8 +30,21 @@ async function init() {
         })
     }
     await inquirer.prompt(githubQuestions).then(ans => {
-        data.contributers.push(Object.values(ans));
+        Object.values(ans).forEach(
+            function(user){
+                data.contributers.push(user)
+            }
+        )
     })
-    generateMarkdown(data);
+    const markdown = await generateMarkdown(data);
+    writeToFile(README_PATH, markdown)
 }
-    init();
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, function(err){
+        if(err) {
+            return console.log(err);
+        }
+        console.log("File saved successfully!");
+    });
+}
+init();

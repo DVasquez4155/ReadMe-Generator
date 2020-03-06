@@ -40,7 +40,7 @@ exports.title = {
 };
 exports.desc = {
     message: "What will your project description be?",
-    type: "input",
+    type: "editor",
     name: "desc",
     default: "Project Description"
 };
@@ -126,6 +126,29 @@ exports.license = {
         {
             name: 'The Unlicense',
             value: '[The Unlicense](https://choosealicense.com/licenses/unlicense/)',
+        },
+    ],
+};
+exports.image = {
+    message: "Which kind of image are you uploading to 'assets/img/icon.(png/jpg)'?",
+    type: "list",
+    name: "image",
+    choices: [
+        {
+            name: 'png',
+            value: './assets/img/icon.png',
+        },
+        {
+            name: 'jpg',
+            value: './assets/img/icon.jpg',
+        },
+        {
+            name: 'gif',
+            value: './assets/img/icon.gif',
+        },
+        {
+            name: 'svg',
+            value: './assets/img/icon.svg',
         },
     ],
 };
