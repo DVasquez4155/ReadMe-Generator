@@ -1,9 +1,7 @@
 const api = require('./api');
 async function generateMarkdown(data) {
   let table = ``;
-  if (data.table == "Yes") {
-    table = `## Table of Contents`
-  }
+  table = `## Table of Contents`
   let install = ``;
   if (data.install != "") {
     install = `
@@ -32,6 +30,10 @@ table += `
 * [Credits](#Credits)
 * [Contributing](#Contributing)
 * [License](#License)`
+
+if (data.table == "No") {
+  table = '';
+}
 const contributers = [];
   await Promise.all(api.getUsers(data.contributers)).then(function(results) {
     results.forEach(function(user){
