@@ -1,5 +1,5 @@
 const api = require('./api');
-const README_PATH = 'README.md';
+const README_PATH = `${process.cwd()}\\README.md`;
 async function generateMarkdown(data) {
   let table = ``;
   if (data.table == "Yes") {

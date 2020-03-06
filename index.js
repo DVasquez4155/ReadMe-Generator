@@ -13,25 +13,23 @@ const questions = [
     q.usage,
     q.test,
     q.contribute,
+    q.githubUsername,
     q.numOfCont,
 ];
-
 async function init() {
-    inquirer.prompt(questions).then(answers => {
-        const questions = [q.githubUsername];
-        for (var i = 0; i < answers.numOfCont; i++) {
-            questions.push({
-                message: `Please input #${i + 2} contributer's GitHub`,
-                type: "input",
-                name: `${i}`
-            })
-        }
-        inquirer.prompt(questions).then(ans => {
-            const answerArray = [];
-            answerArray.push(Object.values(ans))
-            answers.contributers = answerArray;
-            generateMarkdown(answers);
+    const data = await inquirer.prompt(questions);
+    data.contributers = [data.githubUsername]
+    const githubQuestions = []
+    for (var i = 0; i < data.numOfCont; i++) {
+        githubQuestions.push({
+            message: `Please input #${i + 2} contributer's GitHub`,
+            type: "input",
+            name: `${i}`
         })
+    }
+    await inquirer.prompt(githubQuestions).then(ans => {
+        data.contributers.push(Object.values(ans));
     })
+    generateMarkdown(data);
 }
     init();
