@@ -42,7 +42,11 @@ exports.desc = {
     message: "What will your project description be?",
     type: "editor",
     name: "desc",
-    default: "Project Description"
+    default: `As a <type of user>,
+
+I want <some goal>
+
+So that <some reason>.`
 };
 exports.table = {
     message: "Would you like to enable the Table of Contents?",

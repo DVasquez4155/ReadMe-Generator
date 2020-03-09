@@ -57,11 +57,14 @@ const contributers = [];
 
 return `# ${data.title} ${data.projectVersion}
 ${data.badges.join(' ')}
+${table}
 ## Description
-${data.pages}
-
+\`\`\`
 ${data.desc}
-${table}${install}${usage}${test}
+\`\`\`
+
+${data.pages}
+${install}${usage}${test}
 ## Credits
 ${contributers.join(' ')}
 ${data.contribute}
